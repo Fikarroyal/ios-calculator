@@ -1,0 +1,117 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 200; /* Tipis */
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(to right, #000000, #333333); /* Gradien gelap */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; /* Mencegah scroll jika ada margin */
+}
+
+.calculator {
+    background-color: #000000; /* Hitam pekat */
+    border-radius: 20px; /* Sudut membulat */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 320px; /* Lebar tetap */
+    height: 520px; /* Tinggi tetap */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); /* Bayangan lembut */
+    padding: 10px; /* Padding di sekitar isi kalkulator */
+}
+
+.display {
+    grid-column: 1 / -1; /* Mengisi seluruh lebar */
+    background-color: #000000; /* Latar belakang display hitam */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 20px;
+    word-wrap: break-word; /* Membungkus teks panjang */
+    word-break: all; /* Memecah kata panjang */
+    flex-grow: 1; /* Agar display mengisi ruang yang tersisa */
+}
+
+.display .previous-operand {
+    color: rgba(255, 255, 255, .75); /* Agak transparan */
+    font-size: 1.5rem;
+}
+
+.display .current-operand {
+    color: white;
+    font-size: 3.5rem; /* Lebih besar */
+    font-weight: 300; /* Lebih tebal sedikit */
+}
+
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 kolom sama lebar */
+    grid-template-rows: repeat(5, 1fr); /* 5 baris sama tinggi */
+    gap: 10px; /* Jarak antar tombol */
+    padding-bottom: 10px; /* Padding bawah */
+}
+
+.buttons-grid button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: 1.8rem; /* Ukuran font tombol */
+    border-radius: 50%; /* Membuat tombol bulat */
+    color: white;
+    background-color: #333333; /* Warna default tombol angka */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 60px; /* Ukuran minimum untuk tombol bulat */
+    min-height: 60px; /* Ukuran minimum untuk tombol bulat */
+    transition: background-color 0.2s ease, transform 0.1s ease; /* Animasi klik */
+}
+
+/* Tombol Angka */
+.buttons-grid button[data-number] {
+    background-color: #333333; /* Abu-abu gelap */
+}
+
+/* Tombol Fungsi (AC, +/-, %) */
+.buttons-grid .function-button, .buttons-grid .clear-button {
+    background-color: #A6A6A6; /* Abu-abu terang */
+    color: #000000; /* Teks hitam */
+}
+
+/* Tombol Operator (÷, ×, -, +, =) */
+.buttons-grid .operator-button {
+    background-color: #FF9500; /* Oranye */
+}
+
+/* Tombol '0' yang membentang 2 kolom */
+.buttons-grid .span-two {
+    grid-column: span 2;
+    border-radius: 30px; /* Bentuk pil untuk tombol 0 */
+    justify-content: flex-start; /* Teks rata kiri */
+    padding-left: 25px; /* Padding untuk teks 0 */
+}
+
+/* Efek Hover */
+.buttons-grid button:hover {
+    background-color: rgba(255, 255, 255, .2); /* Sedikit transparan saat hover */
+}
+
+.buttons-grid .function-button:hover, .buttons-grid .clear-button:hover {
+    background-color: rgba(166, 166, 166, .8); /* Lebih gelap saat hover */
+}
+
+.buttons-grid .operator-button:hover {
+    background-color: #FFB040; /* Oranye lebih terang saat hover */
+}
+
+/* Efek Aktif (saat tombol ditekan) */
+.buttons-grid button:active {
+    transform: scale(0.95); /* Sedikit mengecil saat ditekan */
+}

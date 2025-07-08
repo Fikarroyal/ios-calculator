@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOS Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23FF9500' d='M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m0 2a6 6 0 1 1 0 12A6 6 0 0 1 8 2m0 1.5a4.5 4.5 0 1 0 0 9A4.5 4.5 0 0 0 8 3.5m0 2a2.5 2.5 0 1 1 0 5A2.5 2.5 0 0 1 8 5.5'/%3E%3C/svg%3E" type="image/svg+xml">
+</head>
+<body>
+    <div class="calculator">
+        <div class="display">
+            <div data-previous-operand class="previous-operand"></div>
+            <div data-current-operand class="current-operand">0</div>
+        </div>
+        <div class="buttons-grid">
+            <button data-all-clear class="clear-button">AC</button>
+            <button data-plus-minus class="function-button">+/-</button>
+            <button data-percent class="function-button">%</button>
+            <button data-operator class="operator-button">÷</button>
+            <button data-number>7</button>
+            <button data-number>8</button>
+            <button data-number>9</button>
+            <button data-operator class="operator-button">×</button>
+            <button data-number>4</button>
+            <button data-number>5</button>
+            <button data-number>6</button>
+            <button data-operator class="operator-button">-</button>
+            <button data-number>1</button>
+            <button data-number>2</button>
+            <button data-number>3</button>
+            <button data-operator class="operator-button">+</button>
+            <button data-number class="span-two">0</button>
+            <button data-number>.</button>
+            <button data-equals class="operator-button">=</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
